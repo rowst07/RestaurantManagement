@@ -1,12 +1,18 @@
-import './App.css'
+import { Route, Routes } from "react-router";
+import HomePage from "./pages/HomePage";
+import LoginPage from "./pages/LoginPage";
+import RestaurantsPage from "./pages/RestaurantsPage";
+import NotFoundPage from "./pages/NotFoundPage";
 
 function App() {
   return (
-    <main>
-      <h1>Restaurant Management System</h1>
-      <p>Frontend is running successfully!</p>
-    </main>
-  )
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/login" element ={<LoginPage />} />
+      <Route path="/restaurants" element={<RestaurantsPage />} />
+      <Route path="*" element={<NotFoundPage />} />
+    </Routes>
+  );
 }
 
-export default App
+export default App;
